@@ -11,6 +11,13 @@ export default class LinearGradient extends Component {
     };
   render() {
     let colors = this.props.colors.join();
-    return <View {...this.props} style={{background: `linear-gradient(top, ${colors})`}}/>;
+    return (
+        <View
+            {...this.props}
+            style={{background: `linear-gradient(top, ${colors})`}}
+        >
+        {children}
+        </View>
+    );
   }
 }
