@@ -1,21 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
-
-type PropsType = {
-  start?: Array<number> | {x: number, y: number};
-  end?: Array<number> | {x: number, y: number};
-  colors: Array<string>;
-  locations?: Array<number>;
-} & typeof(View);
+import { PointPropType, View } from 'react-native';
 
 export default class LinearGradient extends Component {
     static propTypes = {
-        start: PropTypes.oneOfType([
-          PointPropType,
-        ]),
-        end: PropTypes.oneOfType([
-          PointPropType,
-        ]),
+        start: PointPropType,
+        end: PointPropType,
         colors: PropTypes.arrayOf(PropTypes.string).isRequired,
         locations: PropTypes.arrayOf(PropTypes.number),
         style: {
