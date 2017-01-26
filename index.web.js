@@ -7,10 +7,6 @@ export default class LinearGradient extends Component {
         end: PointPropType,
         colors: PropTypes.arrayOf(PropTypes.string).isRequired,
         locations: PropTypes.arrayOf(PropTypes.number),
-        style: {
-            ...View.propTypes.style,
-            background: PropTypes.string
-        },
         ...View.propTypes,
     };
   render() {
