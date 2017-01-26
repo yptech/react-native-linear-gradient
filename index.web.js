@@ -6,10 +6,24 @@ type PropsType = {
   end?: Array<number> | {x: number, y: number};
   colors: Array<string>;
   locations?: Array<number>;
-  style: View.propTypes.style & {background: string}
 } & typeof(View);
 
 export default class LinearGradient extends Component {
+    static propTypes = {
+        start: PropTypes.oneOfType([
+          PointPropType,
+        ]),
+        end: PropTypes.oneOfType([
+          PointPropType,
+        ]),
+        colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+        locations: PropTypes.arrayOf(PropTypes.number),
+        style: {
+            ...View.propTypes.style,
+            background: PropTypes.string
+        },
+        ...View.propTypes,
+    };
   render() {
     let colors = this.props.colors.join();
     return <View {...this.props} style={{background: `linear-gradient(top, ${colors})`}}/>;
