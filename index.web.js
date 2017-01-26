@@ -10,6 +10,9 @@ type PropsType = {
 
 export default class LinearGradient extends Component {
   render() {
-    return <View {...this.props}/>;
+    for(let v of this.props.colors) {
+      colors += v;
+    }
+    return <View {...this.props} style={{background: `linear-gradient(top, ${colors})`}}/>;
   }
 }
