@@ -6,6 +6,7 @@ type PropsType = {
   end?: Array<number> | {x: number, y: number};
   colors: Array<string>;
   locations?: Array<number>;
+  style: View.propTypes.style & {background: string}
 } & typeof(View);
 
 export default class LinearGradient extends Component {
