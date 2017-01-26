@@ -10,6 +10,7 @@ type PropsType = {
 
 export default class LinearGradient extends Component {
   render() {
+    let colors = '';
     for(let v of this.props.colors) {
       colors += v;
     }
