@@ -14,7 +14,6 @@ export default class LinearGradient extends Component {
     return (
         <View
             {...this.props}
-            style={[{background: `linear-gradient(top, ${colors})`}, this.props.style]}
         />
     );
   }
